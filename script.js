@@ -116,3 +116,17 @@ const io = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// ---- Hanging cards (decoration only) ----
+const hang = document.getElementById("hang");
+const hangColors = ["#d9cfc0", "#c9dffb", "#fbf6b5", "#f1e6dc"];
+const hangTilts = [-3, 2, -1.5, 3, -2.5, 1.5, -2];
+works.forEach((w, i) => {
+  const c = document.createElement("div");
+  c.className = "hang-card";
+  c.style.setProperty("--bg", hangColors[i % hangColors.length]);
+  c.style.setProperty("--r", hangTilts[i % hangTilts.length] + "deg");
+  c.style.setProperty("--d", (i * 0.35) + "s");
+  c.innerHTML = `<span class="hang-icon">&#10022;</span><p>${w.name}</p>`;
+  hang.appendChild(c);
+});
