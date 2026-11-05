@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <meta name="description" content="My activities, projects and creative works." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <a href="#home" class="logo">Your Name</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#activities">My Activities</a>
+      <a href="#works">My Works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <p class="eyebrow">Creative portfolio</p>
+      <h1>Ideas that match <em>what I do</em> and <em>who I am.</em></h1>
+      <p class="lead">A collection of my activities, projects and creative works, all in one place.</p>
+      <div class="btns">
+        <a href="#works" class="btn btn-outline">See my works</a>
+        <a href="#activities" class="btn btn-solid">My activities</a>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <div class="envelope"><div class="env-flap"></div><span class="seal"></span></div>
+      <div class="photo">
+        <img
+          src="https://drive.google.com/thumbnail?id=1y5HAONG1sYySU-Qoc0kwLzco9RRZKA8z&sz=w1200"
+          alt="Portrait photo"
+          referrerpolicy="no-referrer"
+          onerror="this.style.display='none'"
+        />
+      </div>
+      <div class="stamp">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(50 50)">
+            <g fill="#c9dffb" stroke="#4a2512" stroke-width="2">
+              <ellipse cx="0" cy="-22" rx="11" ry="18"/>
+              <ellipse cx="0" cy="-22" rx="11" ry="18" transform="rotate(72)"/>
+              <ellipse cx="0" cy="-22" rx="11" ry="18" transform="rotate(144)"/>
+              <ellipse cx="0" cy="-22" rx="11" ry="18" transform="rotate(216)"/>
+              <ellipse cx="0" cy="-22" rx="11" ry="18" transform="rotate(288)"/>
+            </g>
+            <circle r="9" fill="#fbf6b5" stroke="#4a2512" stroke-width="2"/>
+            <circle r="2" fill="#4a2512"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marquee"></div>
+  </div>
+
+  <!-- ACTIVITIES & PROJECT -->
+  <section class="activities" id="activities">
+    <h2 class="title">My <em>Activities and Project</em></h2>
+    <div class="folders">
+      <article class="folder beige reveal">
+        <div class="folder-img img-1"></div>
+        <div class="folder-body">
+          <small>Activity 01</small>
+          <h3>Graphic Design</h3>
+          <p>Posters, brochures and layouts made with a clear, clean eye.</p>
+        </div>
+      </article>
+      <article class="folder tan reveal">
+        <div class="folder-img img-2"></div>
+        <div class="folder-body">
+          <small>Activity 02</small>
+          <h3>Branding</h3>
+          <p>Logos and visual identities that are simple and memorable.</p>
+        </div>
+      </article>
+      <article class="folder blue reveal">
+        <div class="folder-img img-3"></div>
+        <div class="folder-body">
+          <small>Project 01</small>
+          <h3>Video Editing</h3>
+          <p>Short videos with motion, music and quick storytelling.</p>
+        </div>
+      </article>
+      <article class="folder blue reveal">
+        <div class="folder-img img-4"></div>
+        <div class="folder-body">
+          <small>Project 02</small>
+          <h3>Professional Documents</h3>
+          <p>Resumes and letters laid out to look polished and personal.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- WORKS -->
+  <section class="works" id="works">
+    <p class="eyebrow light">Tap an image to open it</p>
+    <h2 class="title light">My <em>Works</em></h2>
+    <div class="works-grid" id="worksGrid"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-card">
+      <h2>Let's <em>work together</em></h2>
+      <p>Have a project in mind? Say hello.</p>
+      <a class="btn btn-solid" href="mailto:youremail@example.com">youremail@example.com</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
