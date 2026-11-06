@@ -41,25 +41,35 @@ const works = [
     name: "30 Sec Video",
     desc: "A short 30-second video with motion, music and quick storytelling.",
     id: "1pLqj3SXfYrdxfa0BQGkv37w-EyCBUhTW",
-    link: "https://drive.google.com/file/d/1NogmIPAD0YaiLIFLQKhE44geNnA-xIrX/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1pLqj3SXfYrdxfa0BQGkv37w-EyCBUhTW/view?usp=drivesdk",
   },
 ];
 
-// ---- Render works ----
+// ---- Render works as folders ----
 const grid = document.getElementById("worksGrid");
-const tilts = [-2, 1.5, -1, 2, -1.5, 1, -2];
+const folderColors = ["beige", "tan", "blue", "blue"];
+const icons = [
+  // bow
+  '<svg viewBox="0 0 60 60"><g fill="none" stroke="#4a2512" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M30 24C22 12 8 14 8 24s14 10 22 0z"/><path d="M30 24c8-12 22-10 22 0s-14 10-22 0z"/><circle cx="30" cy="24" r="4" fill="#4a2512"/><path d="M28 28c-4 8-8 14-12 22M32 28c4 8 8 14 12 22"/></g></svg>',
+  // clip
+  '<svg viewBox="0 0 60 60"><g fill="#b88a4a" stroke="#4a2512" stroke-width="2.2" stroke-linejoin="round"><rect x="14" y="20" width="32" height="20" rx="4"/><rect x="24" y="12" width="12" height="12" rx="2" fill="#4a2512"/></g></svg>',
+  // magnifier
+  '<svg viewBox="0 0 60 60"><g fill="none" stroke="#4a2512" stroke-width="3" stroke-linecap="round"><circle cx="25" cy="25" r="14" fill="rgba(255,255,255,.35)"/><path d="M36 36l16 16" stroke-width="5"/></g></svg>',
+  // chain
+  '<svg viewBox="0 0 60 60"><g fill="none" stroke="#4a2512" stroke-width="3.2" stroke-linecap="round"><rect x="6" y="20" width="30" height="16" rx="8" transform="rotate(-35 21 28)"/><rect x="24" y="26" width="30" height="16" rx="8" transform="rotate(-35 39 34)"/></g></svg>',
+];
 
 works.forEach((w, i) => {
   const a = document.createElement("a");
-  a.className = "work reveal";
+  a.className = "work " + folderColors[i % folderColors.length] + " reveal";
   a.href = w.link;
   a.target = "_blank";
   a.rel = "noopener noreferrer";
-  a.style.setProperty("--r", tilts[i % tilts.length] + "deg");
   a.setAttribute("aria-label", "Open " + w.name);
 
   const imgWrap = document.createElement("div");
   imgWrap.className = "work-img";
+  imgWrap.style.setProperty("--r", (i % 2 ? 1.6 : -1.6) + "deg");
 
   const img = document.createElement("img");
   img.src = `https://drive.google.com/thumbnail?id=${w.id}&sz=w800`;
@@ -74,11 +84,16 @@ works.forEach((w, i) => {
     imgWrap.appendChild(f);
   };
   imgWrap.appendChild(img);
-
   a.appendChild(imgWrap);
+
   a.insertAdjacentHTML(
     "beforeend",
-    `<h3>${w.name}</h3><p>${w.desc}</p><span class="open">Open &rarr;</span>`
+    `<div class="work-body">
+       <small class="tab">Work ${String(i + 1).padStart(2, "0")}</small>
+       <h3>${w.name}</h3>
+       <p>${w.desc}</p>
+       <span class="deco">${icons[i % icons.length]}</span>
+     </div>`
   );
   grid.appendChild(a);
 });
