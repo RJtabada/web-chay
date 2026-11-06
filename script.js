@@ -41,7 +41,7 @@ const works = [
     name: "30 Sec Video",
     desc: "A short 30-second video with motion, music and quick storytelling.",
     id: "1pLqj3SXfYrdxfa0BQGkv37w-EyCBUhTW",
-    link: "https://drive.google.com/file/d/1pLqj3SXfYrdxfa0BQGkv37w-EyCBUhTW/view?usp=drivesdk",
+    link: "https://drive.google.com/file/d/1NogmIPAD0YaiLIFLQKhE44geNnA-xIrX/view",
   },
 ];
 
